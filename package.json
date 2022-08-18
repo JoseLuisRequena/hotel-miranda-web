@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/JoseLuisRequena/hotel-miranda-web/issues"
   },
-  "homepage": "https://joseluisrequena.github.io/hotel-miranda-web",
+  "homepage": "https://joseluisrequena.github.io/hotel-miranda-web/",
   "dependencies": {
     "gh-pages": "^4.0.0"
   }
