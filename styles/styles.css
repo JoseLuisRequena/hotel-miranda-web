@@ -28,6 +28,7 @@ footer__logo_H {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /*border: 2px solid red;*/
 }
 
 body {
@@ -419,6 +420,7 @@ p {
   margin-bottom: 36px;
   background: #E6E6E6;
 }
+
 .container__feacture {
   padding: 0 25px;
   text-align: center;
