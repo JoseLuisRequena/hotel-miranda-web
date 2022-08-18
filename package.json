@@ -1,0 +1,23 @@
+{
+  "name": "hotel-miranda-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch styles/styles.scss:styles/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseLuisRequena/hotel-miranda-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseLuisRequena/hotel-miranda-web/issues"
+  },
+  "homepage": "https://joseluisrequena.github.io/hotel-miranda-web",
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
