@@ -17,7 +17,7 @@ function initMap() {
     const marker = new google.maps.Marker({
       position: hotel,
       map: map,
-      icon: {iconMarker:{ scale: 0.75}}
+      icon: iconMarker,
         
     });
   }
@@ -32,7 +32,7 @@ function initMap() {
       console.log(results[0])
       const pos = results[0].geometry.location;
       infoWindow.setPosition(pos);
-      infoWindow.setContent("You're here!");
+      infoWindow.setContent("You!");
       infoWindow.open(map);
       map.setCenter(pos);
     });
@@ -51,7 +51,7 @@ function initMap() {
           };
           currentPosition.push(pos);
           infoWindow.setPosition(pos);
-          infoWindow.setContent("You're here!");
+          infoWindow.setContent("You!");
           infoWindow.open(map);
           map.setCenter(pos);
         },
@@ -187,13 +187,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 
-//const select = document.getElementById("select");
-//for (let community of communities) {
-//  const option = document.createElement("option");
-//  option.value = community;
-//  option.text = community;
-//  select.appendChild(option);
-//}
 //Listado de hoteles en el mapa
 const hotels = [
   { lat: 36.507027, lng: -4.883428 },
