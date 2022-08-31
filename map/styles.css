@@ -1,0 +1,35 @@
+.map {
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+}
+.map__wraper {
+  height: 400px;
+  margin: 40px 0;
+}
+.map__buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  
+}
+.map__buttons button {
+  background-color: #279efade;
+  color: black;
+  border-color:#0091ff;
+  border-radius: 8px;
+  padding: 10px;
+}
+.map__buttons input, .map__buttons select {
+  border-radius: 8px;
+  padding: 10px;
+  outline: none;
+}
+.map__results {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+}
