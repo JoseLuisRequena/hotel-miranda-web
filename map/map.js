@@ -1,125 +1,133 @@
-//import { espanaComunidades } from "./communities";
-
 
 let map;
 let currentPosition = [];
 let address;
 function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 40.12103360652701, lng: -3.729048909994247 },
-    zoom: 5.7,
-  });
-  infoWindow = new google.maps.InfoWindow();
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 40.12103360652701, lng: -3.729048909994247 },
+        zoom: 5.7,
+    });
 
-  //Marcar hoteles en el mapa
-  const iconMarker = "./img/location.svg";
-  for (let hotel of hotels) {
-    const marker = new google.maps.Marker({
-      position: hotel,
-      map: map,
-      icon: {iconMarker:{ scale: 0.75}}
+    const infoWindow = new google.maps.InfoWindow({
+        content: "",
+        disableAutoPan: true,
+    });
+
+    //Marcar hoteles en el mapa
+    const iconMarker = "./img/location.svg";
+
+    const markers = hotels.map((hotel) => {
+        const marker = new google.maps.Marker({
+            position: hotel,
+            map: map,
+            icon: iconMarker,
+        });
+
+        marker.addListener("click", () => {
+            infoWindow.open(map, marker);
+        });
+        return marker;
+    });
+    // Add a marker clusterer to manage the markers.
+    new markerClusterer.MarkerClusterer({ markers, map });
+
+    //Encontrar la dirección que se introduce en el input
+    const geocoder = new google.maps.Geocoder();
+    const input = document.getElementById("inputAddress");
+    const button = document.getElementById("searchLocation");
+    button.addEventListener("click", () => {
+        address = input.value;
+        geocoder.geocode({ address: address }, function (results, status) {
+            const pos = results[0].geometry.location;
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('You!');
+            infoWindow.open(map);
+            map.setCenter(pos);
+            map.setZoom(map.getZoom() + 3);
+            });
+        });
+    
+        //Encontrar ubicación actual al pinchar en el botón
+        const locationButton = document.getElementById("location");
+        locationButton.addEventListener("click", () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                        };
+                        currentPosition.push(pos);
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent('You!');
+                        infoWindow.open(map);
+                        map.setCenter(pos);
+                        map.setZoom(map.getZoom() + 3);
+                    },
+                    () => { handleLocationError(true, infoWindow, map.getCenter()); }
+                );
+            } else {
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        });
+    }
+    
+    //Devolver lista de hoteles ordenados
+    const nearestButton = document.getElementById("nearest");
+    nearestButton.addEventListener("click", () => {
         
-    });
-  }
+        const destinations = hotels.map((hotel) => ({
+            lat: hotel.lat,
+            lng: hotel.lng,
+        }));
+        
+        if (currentPosition.length) {
+            if (address) {
+                document.getElementById("results").innerHTML = "";
+                calculateDistance(address, destinations);
+            } else {
+                const origin = new google.maps.LatLng(
+                    currentPosition[0].lat,
+                    currentPosition[0].lng
+                    );
+                    document.getElementById("results").innerHTML = "";
+                    calculateDistance(origin, destinations);
+                }
+            } else if (address) {
+                document.getElementById("results").innerHTML = "";
+                calculateDistance(address, destinations);
+            } else {
+                alert("Define your position");
+            }
+        });
+        
+        function calculateDistance(origin, destinations) {
+            let service = new google.maps.DistanceMatrixService();
+            service
+            .getDistanceMatrix({
+                origins: [origin],
+                destinations: destinations,
+                travelMode: "DRIVING",
+            })
+            .then((response) => {
+                const hotels = response.destinationAddresses.map((hotel) => ({
+                    name: hotel,
+                }));
+                const distances = response.rows[0].elements.map((dist) => ({
+                    distance: dist.distance,
+                }));
+            const sortedHotels = [];
+            for (let i = 0; i < hotels.length; i++) {
+              sortedHotels.push({ ...hotels[i], ...distances[i] });
+            }
+            sortedHotels.sort( (a, b) => a.distance.value - b.distance.value);
 
-  //Encontrar la dirección que se introduce en el input
-  const geocoder = new google.maps.Geocoder();
-  const input = document.getElementById("inputAddress");
-  const button = document.getElementById("searchLocation");
-  button.addEventListener("click", () => {
-    address = input.value;
-    geocoder.geocode({ address: address }, function (results, status) {
-      console.log(results[0])
-      const pos = results[0].geometry.location;
-      infoWindow.setPosition(pos);
-      infoWindow.setContent("You're here!");
-      infoWindow.open(map);
-      map.setCenter(pos);
-    });
-  });
-
-  //Encontrar ubicación actual al pinchar en el botón
-  const locationButton = document.getElementById("location");
-  locationButton.addEventListener("click", () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-            zoom: 10,
-          };
-          currentPosition.push(pos);
-          infoWindow.setPosition(pos);
-          infoWindow.setContent("You're here!");
-          infoWindow.open(map);
-          map.setCenter(pos);
-        },
-        () => {
-          handleLocationError(true, infoWindow, map.getCenter());
-        }
-      );
-    } else {
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
-  });
-}
-
-//Devolver lista de hoteles ordenados
-const nearestButton = document.getElementById("nearest");
-nearestButton.addEventListener("click", () => {
-
-  const destinations = hotels.map((hotel) => ({
-    lat: hotel.lat,
-    lng: hotel.lng,
-  }));
-  console.log(destinations)
-  if (currentPosition.length) {
-    if (address) {
-      document.getElementById("results").innerHTML = "";
-      calculateDistance(address, destinations);
-    } else {
-      const origin = new google.maps.LatLng(
-        currentPosition[0].lat,
-        currentPosition[0].lng
-      );
-      document.getElementById("results").innerHTML = "";
-      calculateDistance(origin, destinations);
-    }
-  } else if (address) {
-    document.getElementById("results").innerHTML = "";
-    calculateDistance(address, destinations);
-  } else {
-    alert("Define your position");
-  }
-});
-
-function calculateDistance(origin, destinations) {
-  let service = new google.maps.DistanceMatrixService();
-  service
-    .getDistanceMatrix({
-      origins: [origin],
-      destinations: destinations,
-      travelMode: "DRIVING",
-    })
-    .then((response) => {
-      const hotels = response.destinationAddresses.map((hotel) => ({
-        name: hotel,
-      }));
-      const distances = response.rows[0].elements.map((dist) => ({
-        distance: dist.distance,
-      }));
-      const sortedHotels = [];
-      for (let i = 0; i < hotels.length; i++) {
-        sortedHotels.push({ ...hotels[i], ...distances[i] });
-      }
-      sortedHotels.sort( (a, b) => a.distance.value - b.distance.value);
-      
-      for (let hotel of sortedHotels) {
-        const distance = document.createElement("li");
-        distance.innerText = `${hotel.name} - ${hotel.distance.text}`;
-        document.getElementById("results").appendChild(distance);
-      }
+            for (let hotel of sortedHotels) {
+              const distance = document.createElement("li");
+              distance.innerText = `${hotel.name} --- ${hotel.distance.text}`;
+              document.getElementById("results").appendChild(distance);
+            }
       
     });
 }
@@ -155,23 +163,26 @@ for (let community of communities) {
   selectCommunity.appendChild(option);
 };
 
+
+let mark;
 selectCommunity.addEventListener("change", (e) => {
-  let mark;
+    
+    if(mark){
+        mark.setMap(null);
+    } 
+    let indexCommunity = selectCommunity.selectedIndex;
+    const  spainCommunities = espanaComunidades;  
+    mark = new google.maps.Polygon({
+        paths: spainCommunities[indexCommunity],
+        strokeColor: "#581313be",
+        strokeOpacity: 1,
+        strokeWeight: 2,
+        fillColor: "#581313be",
+        fillOpacity: 0.5,
+    });
 
-  let indexCommunity = selectCommunity.selectedIndex;
+    mark.setMap(map);
 
-  const  spainCommunities = espanaComunidades;
-
-  mark = new google.maps.Polygon({
-    paths: spainCommunities[indexCommunity],
-    strokeColor: "#581313be",
-    strokeOpacity: 1,
-    strokeWeight: 2,
-    fillColor: "#581313be",
-    fillOpacity: 0.5,
-  });
-
-  mark.setMap(map);
 });
 
 window.initMap = initMap;
@@ -187,13 +198,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 
-//const select = document.getElementById("select");
-//for (let community of communities) {
-//  const option = document.createElement("option");
-//  option.value = community;
-//  option.text = community;
-//  select.appendChild(option);
-//}
 //Listado de hoteles en el mapa
 const hotels = [
   { lat: 36.507027, lng: -4.883428 },

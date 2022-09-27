@@ -2,18 +2,19 @@
 <html>
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Old+Standard+TT:wght@400;700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Old+Standard+TT:wght@400;700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <title>Hotel Miranda Location</title>
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
   <body>
     <!--The div element for the map -->
     
-      <div class="map">
-        <div class="map__wraper" id="map"></div>
-        <div class="map__buttons">
-          <button class="map__location" id="location">Current Location</button>
+    <div class="map">
+      <div class="map__wraper" id="map"></div>
+      <div class="map__buttons">
+        <button class="map__location" id="location">Current Location</button>
           <input
             type="text"
             placeholder="Enter your address"
@@ -31,16 +32,16 @@
         </div>
       </div>
    
-    <!-- 
+      <!-- 
      The `defer` attribute causes the callback to execute after the full HTML
      document has been parsed. For non-blocking uses, avoiding race conditions,
      and consistent behavior across browsers, consider loading using Promises
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
     -->
+    <script src="./Map.js"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&region=ES&language=ES&callback=initMap&v=weekly"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&region=ES&language=ES&callback=initMap&v=weekly"
       defer
     ></script>
-    <script src="./map.js"></script>
   </body>
 </html>
