@@ -1,0 +1,55 @@
+.first__rectangle{
+    background: #333;
+    padding: 60px 20px;
+    color: #FFF;
+    
+    &__p{
+        font-family: 'Archivo';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 2.8px;
+        color: #FFF;
+        margin-top: 75px;
+        margin-bottom: 40px;
+    }
+    &__h1{
+        font-family: 'Old Standard TT';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 56px;
+        line-height: 60px;
+        letter-spacing: -1.2px;
+        color: #FFF;
+        margin-bottom: 40px; 
+    }
+    &__div{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+    }
+    @media only screen and (min-width: 1000px) {
+        padding: 125px 100px 125px 100px;
+        &__p{
+            font-size: 14px;
+            line-height: 15px;
+        }
+        &__h1{
+            font-family: 'Old Standard TT';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 100px;
+            line-height: 130px;
+            letter-spacing: -1.2px;
+            color: #FFF;
+            margin-bottom: 40px; 
+        }
+        &__div{
+            flex-direction: row;
+            gap: 30px;
+        }
+    }
+}
