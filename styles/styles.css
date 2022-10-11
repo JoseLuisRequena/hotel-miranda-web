@@ -1,29 +1,4 @@
-@charset "UTF-8";
-footer__titulo {
-  display: flex;
-  align-items: center;
-}
-footer__titulo__h1 {
-  display: block;
-  font-size: 12px;
-  font-family: "Archivo", sans-serif;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 2, 4px;
-  margin-bottom: 0;
-  text-transform: uppercase;
-  color: #111111;
-}
-
-footer__logo_H {
-  margin: 5px;
-  padding: 11px;
-  font-family: "Archivo", sans-serif;
-  font-weight: 600;
-  font-size: 12px;
-  box-shadow: 0px 14px 24px rgba(139, 139, 139, 0.25);
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,152 +7,63 @@ footer__logo_H {
 }
 
 body {
+  overflow-x: hidden;
   min-width: 320px;
 }
 
+:root {
+  --primary-color: #222222;
+  --secondary-color: #333333;
+  --tertiary-color: #BEAD8E;
+  --title-color: #777777;
+}
+
 header {
-  display: flex;
-  align-items: center;
+  font-family: "Archivo";
+  font-size: 16px;
+  position: fixed;
+  z-index: 2;
   width: 100%;
-  padding: 0px;
-  height: 70px;
-  justify-content: space-evenly;
-  background: white;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+  background-color: #fff;
 }
-
-header .logo_H {
-  margin: 5px;
-  padding: 11px;
-  font-family: "Archivo", sans-serif;
-  font-weight: 600;
-  font-size: 12px;
-  box-shadow: 0px 14px 24px rgba(139, 139, 139, 0.25);
-}
-
-header .titulo {
-  display: flex;
-  align-items: center;
-}
-header .titulo__h1 {
-  display: block;
-  font-size: 12px;
-  font-family: "Archivo", sans-serif;
-  font-weight: 400;
-  line-height: 14px;
-  letter-spacing: 2.4px;
-  margin-bottom: 0;
-  text-transform: uppercase;
-  color: #111111;
-}
-
-header .btn {
-  border-style: none;
-  background: white;
-}
-
-nav {
-  position: relative;
-  left: 7%;
-  bottom: 45px;
-  border: 1px;
-  width: 10px;
-}
-
-nav input {
-  /* El input(donde está la lista del menú) no se mostrará en pantalla, pero si en el código. */
-  display: none;
-}
-
-nav label {
-  /* Icono de hamburguesa */
-  cursor: pointer;
-  color: black;
-  font-size: large;
-}
-
-nav ul {
-  /* Lista del menú */
-  display: none;
-  list-style: none;
-  color: gray;
-  line-height: 20px;
-}
-
-nav input:checked ~ ul {
-  /* Con esto, decimos que cuando el input esté clicado, todos los elementos del ul se mostrarán. */
-  position: relative;
-  top: 22px;
-  left: -7%;
-  width: 100%;
-  padding-left: 10px;
-  display: block;
-  box-shadow: 0px 14px 24px rgba(139, 139, 139, 0.25);
-}
-
-nav ul li a {
-  color: gray;
-}
-
-nav ul li a:hover {
-  text-decoration-color: black;
-  color: black;
-}
-
-a:link {
+header a {
   text-decoration: none;
-  font-family: "Archivo", sans-serif;
-  font-style: normal;
+  color: #000;
+}
+
+.title {
+  display: none;
+}
+
+.menu-div {
+  display: none;
+}
+.menu-div-active {
+  display: block;
+  width: 100%;
+  line-height: 25px;
+  padding: 10px;
+}
+.menu-div-active p {
+  margin-left: 20px;
   font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 3.28px;
+  font-size: 16px;
 }
 
-h1 {
-  font-family: "Old Standard TT", serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 56px;
-  line-height: 60px;
-  letter-spacing: -1.2px;
-  margin-bottom: 40px;
-  color: #222;
+@media only screen and (min-width: 1000px) {
+  header {
+    background-color: #000;
+    height: 60px;
+  }
+  .title {
+    display: block;
+    width: 80%;
+    margin: auto;
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+  }
 }
-
-p {
-  font-family: "Archivo", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  color: #777777;
-}
-
-.first__rectangle {
-  background: #333;
-  padding: 75px 20px;
-  color: #FFF;
-}
-.first__rectangle__p {
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 18px;
-  letter-spacing: 2.8px;
-  color: #FFF;
-  margin-bottom: 40px;
-}
-.first__rectangle__h1 {
-  color: #FFF;
-  margin-bottom: 40px;
-}
-.first__rectangle__div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 24px;
-}
-
 .primary__btn {
   border-style: none;
   display: block;
@@ -252,7 +138,16 @@ p {
 }
 .second__rectangle__btn {
   margin-top: 12px;
+  width: 250px;
+  height: 60px;
   box-decoration-break: none;
+}
+@media only screen and (min-width: 1000px) {
+  .second__rectangle {
+    display: flex;
+    justify-content: space-between;
+    padding: 36px 100px;
+  }
 }
 
 .conteiner {
@@ -645,6 +540,152 @@ p {
   line-height: 40px;
   letter-spacing: -0.48px;
   color: #222;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+}
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+.navbar__menu-burger {
+  width: 20px;
+  height: 20px;
+}
+.navbar__menu-logo {
+  width: 36px;
+  height: 36px;
+  box-shadow: 0px 4px 24px rgba(139, 139, 139, 0.75);
+  text-align: center;
+  line-height: 41px;
+  margin-left: 40px;
+}
+.navbar__menu-text {
+  margin-left: 10px;
+  font-size: 11px;
+}
+.navbar__menu-links {
+  display: none;
+}
+.navbar__icons-search {
+  margin: 0 20px;
+}
+@media only screen and (min-width: 600px) {
+  .navbar__menu {
+    width: 10%;
+  }
+  .navbar__menu-burger {
+    display: none;
+  }
+  .navbar__menu-links {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .navbar {
+    width: 80%;
+    height: 120px;
+    margin: auto;
+    background-color: #fff;
+  }
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+  }
+  .navbar__menu-logo {
+    width: 80px;
+    height: 80px;
+    padding-top: 20px;
+    margin-left: 80px;
+    font-size: 40px;
+    line-height: 44px;
+  }
+  .navbar__menu-text {
+    margin-left: 10px;
+    font-size: 26px;
+    line-height: 28px;
+  }
+  .navbar__menu-links {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 17px;
+  }
+  .navbar__icons-search {
+    margin: 0 120px 0 20px;
+  }
+  .navbar__icons img {
+    border: 2px solid rgba(133, 133, 133, 0.3);
+    padding: 6px;
+    height: 60px;
+  }
+}
+
+.first__rectangle {
+  background: #333;
+  padding: 60px 20px;
+  color: #FFF;
+}
+.first__rectangle__p {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 2.8px;
+  color: #FFF;
+  margin-top: 75px;
+  margin-bottom: 40px;
+}
+.first__rectangle__h1 {
+  font-family: "Old Standard TT";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 60px;
+  letter-spacing: -1.2px;
+  color: #FFF;
+  margin-bottom: 40px;
+}
+.first__rectangle__div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+}
+@media only screen and (min-width: 1000px) {
+  .first__rectangle {
+    padding: 125px 100px 125px 100px;
+  }
+  .first__rectangle__p {
+    font-size: 14px;
+    line-height: 15px;
+  }
+  .first__rectangle__h1 {
+    font-family: "Old Standard TT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 130px;
+    letter-spacing: -1.2px;
+    color: #FFF;
+    margin-bottom: 40px;
+  }
+  .first__rectangle__div {
+    flex-direction: row;
+    gap: 30px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
