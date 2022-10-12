@@ -16,7 +16,7 @@
         &-logo{
             width: 36px;
             height: 36px;
-            box-shadow: 0px 4px 24px rgba(139, 139, 139, 0.75);
+            box-shadow: 0px 5px 15px rgba(139, 139, 139, 0.25);
             text-align: center;
             line-height: 41px;
             margin-left: 40px;
@@ -31,6 +31,7 @@
     }
     &__icons-search{
         margin: 0 20px;
+           
     }
     @media only screen and (min-width: 600px) {
         &__menu {
@@ -47,40 +48,11 @@
     }
     @media only screen and (min-width: 1000px) {
         width: 80%;
-        height: 120px;
         margin: auto;
         background-color: #fff;
-        &__menu{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 20px;
-            &-logo{
-                width: 80px;
-                height: 80px;
-                padding-top: 20px;
-                margin-left: 80px;
-                font-size: 40px;
-                line-height: 44px;
-            }
-            &-text{
-                margin-left: 10px;
-                font-size: 26px;
-                line-height: 28px;
-            }
-            &-links{
-                font-weight: 600;
-                font-size: 18px;
-                line-height: 17px;
-            }
-        }
-        &__icons-search{
-            margin: 0 120px 0 20px;
-        }
         &__icons img {
             border: 2px solid rgba(133, 133, 133, 0.3);
             padding: 6px;  
-            height: 60px;
         }
     }                   
 }
