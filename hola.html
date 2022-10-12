@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
     <!--<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Old+Standard+TT:wght@400;700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">-->
     <link rel="stylesheet" href="./styles/styles.css">
     <title>Hotel Miranda</title>
@@ -67,49 +71,70 @@
         <button class="primary__btn second__rectangle__btn">CHECK AVAILABILITY</button>
     </div>
     <div class="conteiner">
-        <div class="third__rectangle">
-            <p class="third__rectangle__h2">ABOUT US</p>
-            <h1 class="third__rectangle__h1">Discover Our Underground.</h1>
-            <P class="third__rectangle__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</P>
+        <div class="conteiner__third__rectangle">
+            <p class="conteiner__third__rectangle__h2">about us</p>
+            <h1 class="conteiner__third__rectangle__h1">Discover Our Underground.</h1>
+            <P class="conteiner__third__rectangle__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</P>
             <button class="primary__btn third__rectangle__btn">BOOK NOW</button>
         </div>
-        <div class="fourth__rectangle">
-            <img class="fourth__rectangle__img" src="./Images/PhotoRectangle.png">
-            <div class="fourth__rectangle__text">
-                <img class="fourth__rectangle__text__img" src="./Images/svg-gobbler.png">
-                <h1 class="fourth__rectangle__text__h1">Strong Team</h1>
-                <p class="fourth__rectangle__text__p ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+        <div class="conteiner__2">
+            <div class="conteiner__2__fourth__rectangle">
+                <img class="conteiner__2__fourth__rectangle__img" src="./Images/PhotoRectangle.png">
+                <div class="conteiner__2__fourth__rectangle__text">
+                    <img class="conteiner__2__fourth__rectangle__text__img" src="./Images/svg-gobbler.png">
+                    <h1 class="conteiner__2__fourth__rectangle__text__h1">Strong Team</h1>
+                    <p class="fconteiner__2__ourth__rectangle__text__p ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                </div>
             </div>
-        </div>
-        <div class="fifth__rectangle">
-            <img class="fifth__rectangle__img" src="./Images/PhotoRectangle.png">
-            <div class="fifth__rectangle__luxury">
-                <img class="fifth__rectangle__luxury__icon" src="./Images/icon_calendar_2.svg">
-                <h1 class="fifth__rectangle__luxury__h1">Luxury Room</h1>
-                <p class="fifth__rectangle__luxury__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            <div class="conteiner__2__fifth__rectangle">
+                <img class="conteiner__2__fifth__rectangle__img" src="./Images/PhotoRectangle.png">
+                <div class="conteiner__2__fifth__rectangle__luxury">
+                    <img class="conteiner__2__fifth__rectangle__luxury__icon" src="./Images/icon_calendar_2.svg">
+                    <h1 class="conteiner__2__fifth__rectangle__luxury__h1">Luxury Room</h1>
+                    <p class="conteiner__2__fifth__rectangle__luxury__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container__slider">
-        <p class="container__slider__p">Rooms</p>
-        <h1 class="container__slider__h1">Hand Picked Rooms</h1>
-        <div class="container__slider__services">
-            <img class="container__slider__services__icon" src="./Images/Icon_bed.svg">
-            <img class="container__slider__services__icon" src="./Images/Icon_WiFi.svg">
-            <img class="container__slider__services__icon" src="./Images/Icon_parking.svg">
-            <img class="container__slider__services__icon" src="./Images/icon_A.C.svg">
-            <img class="container__slider__services__icon" src="./Images/Icon_GYM.svg">
-            <img class="container__slider__services__icon" src="./Images/Icon_tabacco.svg">
-            <img class="container__slider__services__icon" src="./Images/Icon_drink.svg">
+    <div class="rooms section">
+        <h5 class="rooms__title section__title">ROOMS</h5>
+        <h1 class="rooms__headline section__headline">Hand Picked Rooms</h1>
+        <div class="rooms__icons">
+          <img src="img/iconos_svg/bed.svg" alt="bed_icon" />
+          <img src="img/iconos_svg/wifi.svg" alt="wifi_icon" />
+          <img src="img/iconos_svg/car.svg" alt="car_icon" />
+          <img src="img/iconos_svg/air.svg" alt="air_icon" />
+          <img src="img/iconos_svg/gym.svg" alt="gym_icon" />
+          <img src="img/iconos_svg/smoke.svg" alt="smoke_icon" />
+          <img src="img/iconos_svg/bar.svg" alt="bar_icon" />
         </div>
-        <div class="container__slider__images">
+        <div class="rooms__slider swiper">
+          <div class="rooms__slider-wraper swiper-wrapper">
+            <img
+              src="./img/slide1.jpg"
+              alt="hotel_room"
+              class="rooms__slider-slide swiper-slide"
+            />
+            <img
+              src="./img/slide2.jpg"
+              alt="hotel_room"
+              class="rooms__slider-slide swiper-slide"
+            />
+            <img
+              src="./img/slide3.jpg"
+              alt="hotel_room"
+              class="rooms__slider-slide swiper-slide"
+            />
+            <img
+              src="./img/slide4.jpg"
+              alt="hotel_room"
+              class="rooms__slider-slide swiper-slide"
+            />
+          </div>
+          <div class="rooms__button swiper-button-prev"></div>
+          <div class="rooms__button swiper-button-next"></div>
         </div>
-        <div class="container__slider__dataRoom">
-            <h1 class="container__slider__dataRoom__h1">Minimal Duplex Room</h1>
-            <p class="container__slider__dataRoom__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-            <div class="container__slider__dataRoom__cost">$000</div>
-        </div>
-    </div>
+      </div>
     <div class="container__video">
         <p class="container__video__p">Intro video</p>
         <h1 class="container__video__h1">Meet With Our Luxury Place.</h1>
@@ -276,6 +301,7 @@
             <p class="footer__container__p">Terms of use    |    Privacy Environmental Policy</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="javascripts/script.js"></script>       
 </body>
 </html>

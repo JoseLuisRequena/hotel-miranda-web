@@ -3,12 +3,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /*border: 2px solid red;*/
+  box-sizing: border-box;
+  /*border: 0.5px solid red;*/
 }
 
 body {
   overflow-x: hidden;
-  min-width: 320px;
+  min-width: 370px;
 }
 
 :root {
@@ -99,6 +100,26 @@ header a {
   text-transform: uppercase;
 }
 
+.section {
+  font-family: "Archivo";
+  font-size: 14px;
+}
+.section__title {
+  font-family: "Archivo";
+  font-size: 0.9em;
+  color: var(--title-color);
+  letter-spacing: 2.8px;
+  font-weight: 700;
+}
+.section__headline {
+  font-family: "Old Standard TT";
+  font-weight: 400;
+  font-size: 3.2em;
+  line-height: 60px;
+  letter-spacing: -1.2px;
+  margin-top: 30px;
+}
+
 .second__rectangle {
   background: #222;
   padding: 36px 20px;
@@ -147,6 +168,7 @@ header a {
     display: flex;
     justify-content: space-between;
     padding: 36px 100px;
+    margin-bottom: 120px;
   }
 }
 
@@ -154,38 +176,53 @@ header a {
   text-align: center;
   align-items: center;
 }
-
-.third__rectangle {
+.conteiner__third__rectangle {
   background: #F9F9F9;
   padding: 40px 20px;
   height: 610px;
+  text-align: initial;
 }
-.third__rectangle__h2 {
-  margin-bottom: 30px;
+.conteiner__third__rectangle__h2 {
+  color: var(--title-color);
+  font-family: "Archivo", sans-serif;
   font-weight: 700;
   font-size: 13px;
   line-height: 18px;
   letter-spacing: 2.8px;
   text-transform: uppercase;
-}
-.third__rectangle__h1 {
-  margin-bottom: 16px;
-}
-.third__rectangle__p {
-  margin-bottom: 25px;
-}
-.third__rectangle__btn {
   margin-bottom: 30px;
 }
-
-.fourth__rectangle {
+.conteiner__third__rectangle__h1 {
+  color: var(--primary-color);
+  font-family: "Old Standard TT", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: -1.2px;
+  margin-bottom: 16px;
+}
+.conteiner__third__rectangle__p {
+  color: var(--title-color);
+  font-family: "Archivo", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 25px;
+}
+.conteiner__third__rectangle__btn {
+  margin-bottom: 30px;
+}
+.conteiner__2__fourth__rectangle {
   display: flex;
   text-align: center;
   margin-top: -120px;
   flex-direction: column;
   align-items: center;
 }
-.fourth__rectangle__text {
+.conteiner__2__fourth__rectangle__text {
   padding: 38px 35px;
   margin-bottom: 45px;
   max-width: 270px;
@@ -193,50 +230,99 @@ header a {
   background-repeat: no-repeat;
   background-position: right 20%;
 }
-.fourth__rectangle__text__img {
+.conteiner__2__fourth__rectangle__text__img {
   margin-bottom: 30px;
 }
-.fourth__rectangle__text__h1 {
+.conteiner__2__fourth__rectangle__text__h1 {
   font-family: "Old Standard TT", serif;
   font-size: 30px;
   line-height: 30px;
   letter-spacing: -0.9px;
   color: #111111;
 }
-.fourth__rectangle__text__p {
+.conteiner__2__fourth__rectangle__text__p {
   font-family: "Roboto", sans-serif;
   line-height: 22px;
   color: #111111;
 }
-
-.fifth__rectangle {
+.conteiner__2__fifth__rectangle {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.fifth__rectangle__img {
+.conteiner__2__fifth__rectangle__img {
   width: 270px;
 }
-.fifth__rectangle__luxury {
+.conteiner__2__fifth__rectangle__luxury {
   padding: 38px 35px;
   background: #222;
   width: 270px;
   margin-bottom: 60px;
 }
-.fifth__rectangle__luxury__icon {
+.conteiner__2__fifth__rectangle__luxury__icon {
   margin-bottom: 30px;
 }
-.fifth__rectangle__luxury__h1 {
+.conteiner__2__fifth__rectangle__luxury__h1 {
   font-family: "Old Standard TT", serif;
   font-size: 30px;
   line-height: 30px;
   letter-spacing: -0.9px;
   color: #FFF;
 }
-.fifth__rectangle__luxury__p {
+.conteiner__2__fifth__rectangle__luxury__p {
   font-family: "Roboto", sans-serif;
   line-height: 22px;
   color: #FFF;
+}
+@media only screen and (min-width: 1000px) {
+  .conteiner {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 0 0 100px;
+    margin-bottom: 120px;
+  }
+  .conteiner__2 {
+    display: flex;
+  }
+  .conteiner__third__rectangle {
+    margin-top: 170px;
+  }
+  .conteiner__third__rectangle__h2 {
+    font-size: 14px;
+  }
+  .conteiner__third__rectangle__h1 {
+    max-width: 460px;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: -2.4px;
+  }
+  .conteiner__third__rectangle__p {
+    max-width: 400px;
+  }
+  .conteiner__2 {
+    position: relative;
+    top: -100px;
+  }
+  .conteiner__2__fourth__rectangle {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .conteiner__2__fourth__rectangle__text {
+    margin: 0 0 30px 0;
+  }
+  .conteiner__2__fifth__rectangle {
+    position: relative;
+    top: 60px;
+  }
+  .conteiner__2__fifth__rectangle__luxury {
+    margin: 30px 30px 0 30px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .conteiner__third__rectangle {
+    padding-left: 7%;
+    padding-right: 20%;
+  }
 }
 
 .container__slider {
@@ -562,7 +648,7 @@ header a {
 .navbar__menu-logo {
   width: 36px;
   height: 36px;
-  box-shadow: 0px 4px 24px rgba(139, 139, 139, 0.75);
+  box-shadow: 0px 5px 15px rgba(139, 139, 139, 0.25);
   text-align: center;
   line-height: 41px;
   margin-left: 40px;
@@ -593,41 +679,12 @@ header a {
 @media only screen and (min-width: 1000px) {
   .navbar {
     width: 80%;
-    height: 120px;
     margin: auto;
     background-color: #fff;
-  }
-  .navbar__menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 20px;
-  }
-  .navbar__menu-logo {
-    width: 80px;
-    height: 80px;
-    padding-top: 20px;
-    margin-left: 80px;
-    font-size: 40px;
-    line-height: 44px;
-  }
-  .navbar__menu-text {
-    margin-left: 10px;
-    font-size: 26px;
-    line-height: 28px;
-  }
-  .navbar__menu-links {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 17px;
-  }
-  .navbar__icons-search {
-    margin: 0 120px 0 20px;
   }
   .navbar__icons img {
     border: 2px solid rgba(133, 133, 133, 0.3);
     padding: 6px;
-    height: 60px;
   }
 }
 
@@ -686,6 +743,124 @@ header a {
     flex-direction: row;
     gap: 30px;
   }
+}
+
+.rooms {
+  text-align: center;
+  padding: 50px 0;
+  margin: 0 15px;
+}
+.rooms__icons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  width: 256px;
+  height: 40px;
+  box-shadow: 0px 8px 16px rgba(138, 138, 138, 0.05);
+}
+.rooms__slider {
+  z-index: 0;
+  margin: 24px 10px 0 10px;
+}
+.rooms__slider-slide {
+  max-width: 700px;
+  max-height: 400px;
+  margin: 0 10px 0 10px;
+}
+.rooms__button {
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  color: #111;
+  --swiper-navigation-size: 10px;
+}
+.rooms__button:hover {
+  background-color: var(--tertiary-color);
+  color: #fff;
+}
+
+.rooms-grid {
+  text-align: center;
+  font-size: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  max-width: 950px;
+  margin: auto;
+  padding: 20px;
+}
+.rooms-grid__image {
+  width: 290px;
+  height: 200px;
+  margin: 20px auto;
+}
+.rooms-grid__icons {
+  position: relative;
+  margin-top: -55px;
+}
+.rooms-grid__text {
+  margin: 10px auto;
+  max-width: 300px;
+}
+.rooms-grid__text h1 {
+  font-family: "Old Standard TT";
+  font-weight: 400;
+  font-size: 1.7em;
+  line-height: 24px;
+  letter-spacing: -0.72px;
+  color: var(--primary-color);
+}
+.rooms-grid__text p {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 24px;
+  color: var(--title-color);
+  margin-top: 10px;
+}
+.rooms-grid__text-flex {
+  display: flex;
+  justify-content: space-around;
+  font-family: "Archivo";
+  font-weight: 700px;
+  font-size: 1em;
+}
+.rooms-grid__text-flex .rooms-grid__text-price {
+  color: var(--tertiary-color);
+}
+.rooms-grid__text-flex .rooms-grid__text-booking {
+  color: #BDBDBD;
+  cursor: pointer;
+}
+.rooms-grid__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  font-family: "Archivo";
+  font-weight: 700;
+  font-size: 0.9em;
+  margin-top: 30px;
+}
+.rooms-grid__pagination button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+.rooms-grid__pagination span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  color: var(--primary-color);
 }
 
 /*# sourceMappingURL=styles.css.map */
