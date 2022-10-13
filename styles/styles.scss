@@ -319,81 +319,6 @@ header {
         }
     }
 }
-.container__slider{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &__p{
-        font-weight: 700;
-        line-height: 15px;
-        letter-spacing: 2.8px;
-        text-transform: uppercase;
-    }
-    &__h1{
-        text-align: center;
-    }
-    &__services{
-        width: 256px;
-        height: 40px;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    &__images{
-        height: 244px;
-        background: #E5E5E5;
-        width: 100%;
-    }
-    &__dataRoom{
-        padding: 20px 43px;
-        margin: 20px;
-        &__h1{
-            text-align: center;
-            font-size: 28px;
-            line-height: 36px;
-            margin-bottom: 12px;
-        }
-        &__p{
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-            margin-bottom: 12px;
-        }
-        &__cost{
-            font-family: 'Archivo', sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 32px;
-            line-height: 43px;text-align: center;
-            color: #BEAD8E;
-
-        }
-    }
-}
-.container__video{
-    padding: 64px 20px 48px;
-    background: #222;
-    margin-bottom: 60px;
-    &__p{
-        font-weight: 700;
-        line-height: 15px;
-        letter-spacing: 2.8px;
-        text-transform: uppercase;
-        margin-bottom: 32px;
-        color: #BDAC8D;
-    }
-    &__h1{
-        color: #FFF;
-        margin-bottom: 16px;
-    }
-    &__p2{
-        color: #C2C2C2;
-        margin-bottom: 32px;
-    }
-    &__video{
-        height: 270px;
-        margin-bottom: 36px;
-        background: #E6E6E6;
-    }
-}
 .container__feacture{
     padding: 0 25px;
     text-align: center;
@@ -622,3 +547,4 @@ header {
 @import 'firstRectangle';
 @import 'rooms';
 @import 'rooms-grid';
+@import 'video';
