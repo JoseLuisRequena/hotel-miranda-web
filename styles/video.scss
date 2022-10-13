@@ -1,0 +1,53 @@
+.container__video{
+    background: var(--primary-color);
+    padding: 30px 20px;
+    &__wraper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        &__text{
+            max-width: 400px;
+            &__title {
+                color: var(--tertiary-color);
+            }
+            &__headline {
+                margin-top: 20px;
+                color: #fff;
+            }
+            & p {
+                font-weight: 400;
+                font-size: 0.85em;
+                line-height: 24px;
+                color: #C2C2C2;
+            }
+        }
+        &__media{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__btn {
+       display: flex;
+       margin: 20px auto;
+       align-items: center;
+       justify-content: center;
+    }
+    @media only screen and (min-width: 1000px) {
+        background: linear-gradient(to right, var(--primary-color) 0%, var(--primary-color) 70%, var(--tertiary-color) 70%, var(--tertiary-color) 100%);
+        margin-bottom: 120px;
+        &__wraper{
+            gap: 50px;
+            justify-content: center;
+            &__text{
+                width: 35%;
+            }
+            &__media{
+                width: 400px;
+            }
+        }
+        & button{
+            margin-top: 50px;
+        }
+    }
+}
