@@ -11,3 +11,18 @@ menuIcon.addEventListener("click", () => {
     menu.innerHTML = "";
   }
 });
+
+const swiper = new Swiper(".rooms__slider", {
+  direction: "horizontal",
+  loop: true,
+  slidesPerView: "auto",
+  centeredSlides: true,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 4000,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
