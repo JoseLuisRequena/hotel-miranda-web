@@ -1,0 +1,37 @@
+.container__marketing{
+    text-align: center;
+    background: #111;
+    padding: 46px;
+    &__div{
+        margin-bottom: 60px;
+    }
+    &__h1{
+        font-family: 'Roboto', serif;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 82px;
+        margin-bottom: 0;
+        color: #FFF
+    }
+    &__p{
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        color: #999; 
+    }
+    @media only screen and (min-width: 600px){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    @media only screen and (min-width: 900px){
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        &__div{
+            margin-bottom: 0px;
+        }
+    }
+}
