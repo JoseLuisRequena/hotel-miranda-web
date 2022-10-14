@@ -1,0 +1,129 @@
+.foods{
+    &__donut{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        & img{
+            // margin-right: -25px;
+            width: 100px;
+            height: 100px;
+        }
+    }
+    &__wraper{
+        padding: 0px 20px 30px;
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+    }
+    &__pagination{
+        &-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            max-width: 400px;
+            margin: auto;
+        }
+        &-button {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            --swiper-navigation-size: 10px;
+            background-color: var(--tertiary-color);
+            color: #fff;
+            right: 0;
+            left: 0;
+        }
+    }
+    &__item{
+        display: flex;
+        gap: 20px;
+        margin: 15px auto;
+        max-width: 400px;
+        &-img{
+            width: 110px;
+            height: 110px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        &-txt{
+            width: 60%;
+            color: var(--primary-color);
+            & h1{
+                font-family: 'Old Standard TT';
+                font-weight: 400;
+                font-size: 1.5em;
+                line-height: 20px;
+                letter-spacing: -0.72px;  
+            }
+            & p {
+                font-family: 'Roboto';
+                font-weight: 400;
+                font-size: 0.8em;
+                line-height: 20px;
+            }
+        }
+    }
+    &__slider{
+        width: 80%;
+        max-width: 400px;
+        margin-bottom: 60px;
+        &-slide{
+            height: auto;
+            max-height: 300px;
+        }
+    }
+    &__slider-pagination {
+        position: relative;
+        margin-top: 24px;
+        --swiper-theme-color: var(--tertiary-color);
+    }
+    @media only screen and (min-width: 900px) {
+        &__wraper {
+            max-width: 800px;
+        }
+        &__pagination {
+            &-wraper {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+            }
+            &-slide {
+                width: 50%;
+            }
+            &-button{
+                display: none;
+            }
+        }
+        &__slider{
+            max-width: none;
+            width: 90%;
+            &-wraper{
+                gap: 20px;
+                display: flex;
+                justify-content: space-around;
+            }
+            &-slide{
+                width: 33%;
+            }
+        }
+    }
+}
+.eggs{
+    background-image: url("../img/eggs.jpg");
+}
+.tea{
+    background-image: url("../img/tea.jpg");
+}
+.chia{
+    background-image: url("../img/chia-oatmeal.jpg");
+}
+.fruit{
+    background-image: url("../img/fruit.jpg");
+}
+.marmalade{
+    background-image: url("../img/marmalade.jpg");
+}
+.cheese{
+    background-image: url("../img/cheese.jpg");
+}

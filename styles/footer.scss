@@ -1,0 +1,138 @@
+.footer{
+    background-image: url(../Images/footer-background.svg);
+    padding: 32px 20px;
+    &__titulo{
+        display: flex;
+        align-items: center;
+        margin-bottom: 47px;
+        &__logo_H{
+            text-align: center;
+            width: 80px;
+            height: 80px;
+            margin-right : 20px;
+            padding: 20px;
+            font-family: 'Archivo', sans-serif;
+            font-weight:700;
+            font-size: 40px;
+            line-height: 43px;
+            color: #FFF;
+            background: #BDAC8D;
+            box-shadow: 0px 14px 24px rgba(139, 139, 139, 0.25);
+        }
+        &__text{
+            &__h1{
+                display: block;
+                font-size: 12px;
+                font-family: 'Archivo', sans-serif;
+                font-weight:400;
+                line-height: 28px;
+                letter-spacing: 2.6px;
+                margin-bottom: 0;
+                text-transform: uppercase;
+                color: #111111;
+                font-style: normal;
+                font-size: 26px;
+            }  
+        }
+    }
+    &__p{
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 32px;
+    }
+    &__container__redes{
+        display: flex;
+        margin-bottom: 32px;
+        &__img{
+            background: #F8F8F8;
+            height: 40px;
+            width: 40px;
+            padding: 8px;
+            margin-right: 10px;
+        }
+    }
+    &__services{
+        max-width: 336px;
+        margin-bottom: 32px;
+        &__h2{
+            font-family: 'Old Standard TT';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 24px;
+            color: #222222;
+            margin-bottom: 24px;
+        }
+        &__text{
+            display: flex;
+            &__p1{
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                line-height: 48px;            
+            }
+            &__p2{
+                padding-left: 20px;
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                line-height: 48px;            
+            }
+        }
+    }
+    &__contact__us{
+        margin-bottom: 34px;
+        &__h2{
+            font-family: 'Old Standard TT';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 24px;
+            color: #222222;
+            margin-bottom: 24px;
+        }
+        &__container{
+            display: flex;
+            margin-bottom: 60px;
+            &__h2{
+                margin-left: 22px;
+                font-family: 'Old Standard TT';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 24px;
+            }
+            &__p{
+                margin-left: 22px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+    }
+    &__container{
+        background: #F8F8F8;
+        padding: 16px 20px;
+        &__p{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 40px;
+        letter-spacing: -0.48px;
+        color: #222;
+        }
+    }
+    @media only screen and (min-width: 600px){
+        &__container{
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    @media only screen and (min-width: 1000px){
+        display: flex;
+        justify-content: space-around;
+        &__p{
+            max-width: 270px;
+        }
+    }
+}
