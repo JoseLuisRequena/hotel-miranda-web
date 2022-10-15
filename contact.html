@@ -1,47 +1,177 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Old+Standard+TT:wght@400;700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-    <title>Hotel Miranda Location</title>
-    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="./map/styles.css" />
-  </head>
-  <body>
-    <!--The div element for the map -->
-    
-    <div class="map">
-      <div class="map__wraper" id="map"></div>
-      <div class="map__buttons">
-        <button class="map__location" id="location">Current Location</button>
-          <input
-            type="text"
-            placeholder="Enter your address"
-            class="map__direction"
-            id="inputAddress"
-          />
-          <button class="map__nearest" id="nearest">
-            Find my nearest location
-          </button>
-          <button id="searchLocation">Search</button>
-          <select class="map__select" id="select"></select>
-        </div>
-        <div class="map__results">
-          <ul id="results"></ul>
-        </div>
-      </div>
-   
-      <!-- 
-     The `defer` attribute causes the callback to execute after the full HTML
-     document has been parsed. For non-blocking uses, avoiding race conditions,
-     and consistent behavior across browsers, consider loading using Promises
-     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-    -->
-    <script src="./map/map.js"></script>
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&region=ES&language=ES&callback=initMap&v=weekly"
-      defer
-    ></script>
-  </body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <title>Hotel Miranda</title>
+        <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+    </head>
+    <body>
+        <header>
+            <div class="title">We Make Your Feel Comfortable</div>
+            <div class="navbar">
+                <div class="navbar__menu" id="navbar">
+                    <img
+                        src="./img/iconos_svg/menu.svg"
+                        alt="menu-icon"
+                        class="navbar__menu-burger"
+                        id="menu-icon"
+                    />
+                    <a href="./index.html">
+                        <div class="navbar__menu-logo">
+                            <h3>H</h3>
+                        </div>
+                    </a>
+                    <div class="navbar__menu-text"><b>HOTEL</b><br />MIRANDA</div>
+                </div>
+                <nav class="navbar__menu-links" id="menu">
+                    <a href="./about_as.html"><p>About Us</p></a>
+                    <a href="./rooms.html"><p>Rooms</p></a>
+                    <a href="./offers.html"><p>Offers</p></a>
+                    <a href="./contact.html"><p>Contact</p></a>
+                </nav>
+                <div class="navbar__icons">
+                    <img
+                        src="./img/iconos_svg/user.svg"
+                        alt="user_icon"
+                        class="navbar__icons-user"
+                    />
+                    <img
+                        src="./img/iconos_svg/search.svg"
+                        alt="search_icon"
+                        class="navbar__icons-search"
+                    />
+                </div>
+            </div>
+            <div class="menu-div" id="menu-div"></div>
+        </header>
+        <main>
+            <div class="presentation">
+                <div class="presentation__wraper">
+                    <h2>THE ULTIMATE LUXURY</h2>
+                    <h1>New Details</h1>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="contact__item">
+                    <img src="./img/map.png" />
+                    <h1>Hotel address</h1>
+                    <p>19/A, Cirikon City hall Tower New York, NYC</p>
+                </div>
+                <div class="contact__item">
+                    <img src="./img/phone.png" />
+                    <h1>Phone Number</h1>
+                    <p>+34 641716423</p>
+                </div>
+                <div class="contact__item">
+                    <img src="./img/email.png" />
+                    <h1>Email</h1>
+                    <p>jlrequenaetcheverria@gmailcom</p>
+                </div>
+            </div>
+            <div class="map">
+                <div class="map__wraper" id="map"></div>
+                <div class="map__buttons">
+                    <button class="map__buttons__button" id="location">Current Location</button>
+                    <input class="map__buttons__direction" type="text" placeholder="Enter your address" id="inputAddress" />
+                    <button class="map__buttons__button" id="nearest">Find my nearest location</button>
+                    <button class="map__buttons__button"id="searchLocation">Search</button> 
+                    <select class="map__buttons__select" id="select"></select>
+                </div>
+                <div class="map__results">
+                    <ul class="map__results__ul" id="results"></ul>
+                </div>
+            </div>
+            <div class="contact">
+                <form class="contact__form">
+                    <div class="contact__form__inputs">
+                        <input type="text" placeholder="Your full name" class="contact__form__inputs__name" />
+                        <input type="text" placeholder="Add phone number" class="contact__form__inputs__phone" />
+                        <input type="text" placeholder="Enter email address" class="contact__form__inputs__email" />
+                        <input type="text" placeholder="Enter subject" class="contact__form__inputs__subject" />
+                    </div>
+                    <textarea placeholder="Enter message" class="contact__form__message"></textarea>
+                    <button type="submit" class="primary__btn contact__form__button">SEND</button> 
+                </form>
+            </div>
+        </main>
+        <footer>
+            <div class="footer">
+                <div>
+                    <div class="footer__titulo">
+                        <div class="footer__titulo__logo_H">H</div>
+                        <div class="footer__titulo__text">
+                            <h1 class="footer__titulo__text__h1"><b>Hotel</b></h1>
+                            <h1 class="footer__titulo__text__h1">Miranda</h1>
+                        </div>
+                    </div>
+                    <p class="footer__p">Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed doing eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat ion ullamco laboris nisi.</p>
+                    <div class="footer__container__redes">
+                        <div class="footer__container__redes__img"><img src="./Images/icon_facebook.svg"></div>
+                        <div class="footer__container__redes__img"><img src="./Images/icon_twitter.svg"></div>
+                        <div class="footer__container__redes__img"><img src="./Images/icon_be.svg"></div>
+                        <div class="footer__container__redes__img"><img src="./Images/icon_LinkedIn.svg"></div>
+                        <div class="footer__container__redes__img"><img src="./Images/icon_you_tube.svg"></div>
+                    </div>
+                </div>
+                <div class="footer__services">
+                    <h2 class="footer__services__h2">Services.</h2>
+                    <div class="footer__services__text">
+                        <p class="footer__services__text__p1">
+                            + Resturent & Bar <br>
+                            + Swimming Pool <br>
+                            + Wellness & Spa <br>
+                            + Restaurant <br>
+                            + Conference Room <br>
+                            + Coctail Party House <br>
+                        </p>
+                        <p class="footer__services__text__p2">
+                            + Gaming Zone <br>
+                            + Marrige Party <br>
+                            + Party Planning <br>
+                            + Tour Consultancy
+                        </p>
+                    </div>
+                </div>
+                <div class="footer__contact__us">
+                    <h2 class="footer__contact__us__h2">Contact Us.</h2>
+                    <div class="footer__contact__us__container">
+                        <img src="./img/icon_phone.svg">
+                        <div>
+                        <h2 class="footer__contact__us__container__h2">Phone Number</h2>
+                        <p class="footer__contact__us__container__p">+34 641716423</p>
+                        </div>
+                    </div>
+                    <div class="footer__contact__us__container">
+                        <img src="./img/icon_correo.svg">
+                        <div>
+                        <h2 class="footer__contact__us__container__h2">Email</h2>
+                        <p class="footer__contact__us__container__p">jlrequenaetcheverria@gmailcom</p>
+                        </div>
+                    </div>
+                    <div class="footer__contact__us__container">
+                        <img src="./img/icon_location2.svg">
+                        <div>
+                        <h2 class="footer__contact__us__container__h2">Hotel address</h2>
+                        <p class="footer__contact__us__container__p">19/A, Cirikon City hall Tower New York, NYC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__container">
+                <p class="footer__container__p">Copyright By@Example - 2020</p>
+                <p class="footer__container__p">Terms of use    |    Privacy Environmental Policy</p>
+            </div>
+        </footer>
+        <script src="./javascripts/map.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&region=ES&language=ES&callback=initMap&v=weekly"
+                defer
+            >
+        </script>
+    </body>
 </html>
