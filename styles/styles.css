@@ -597,16 +597,16 @@ header a {
   color: var(--primary-color);
 }
 .foods__item-txt h1 {
-  font-family: "Old Standard TT";
+  font-family: "Old Standard TT", sans-serif;
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 24px;
   line-height: 20px;
   letter-spacing: -0.72px;
 }
 .foods__item-txt p {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 0.8em;
+  font-size: 14px;
   line-height: 20px;
 }
 .foods__slider {
