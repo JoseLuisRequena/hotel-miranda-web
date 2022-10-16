@@ -597,16 +597,16 @@ header a {
   color: var(--primary-color);
 }
 .foods__item-txt h1 {
-  font-family: "Old Standard TT";
+  font-family: "Old Standard TT", sans-serif;
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 24px;
   line-height: 20px;
   letter-spacing: -0.72px;
 }
 .foods__item-txt p {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 0.8em;
+  font-size: 14px;
   line-height: 20px;
 }
 .foods__slider {
@@ -1290,7 +1290,7 @@ header a {
   justify-content: center;
   gap: 30px;
   max-width: 500px;
-  margin: auto;
+  margin: 30px auto;
 }
 .services__item {
   display: flex;
@@ -1324,23 +1324,26 @@ header a {
     font-size: 10px;
   }
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 800px) {
   .services {
-    max-width: none;
+    max-width: 800px;
+    display: flex;
+    margin: 50px auto;
+    justify-content: space-around;
   }
 }
 
 .restaurant {
   width: 95%;
-  max-width: 750px;
+  max-width: 850px;
   padding: 20px;
-  margin: auto;
+  margin: 30px auto;
   background: #fff;
   box-shadow: 0px 14px 24px rgba(184, 184, 184, 0.1);
 }
 .restaurant__image {
   width: 100%;
-  height: 60vw;
+  height: 300px;
   margin: 10px 0;
   background-image: url("../img/buffet1.jpg");
   background-position: center;
@@ -1351,14 +1354,14 @@ header a {
   padding-top: 20px;
 }
 .restaurant h1 {
-  font-size: 2.5em;
+  font-size: 32px;
   line-height: 49px;
 }
 .restaurant p {
   font-family: "Archivo";
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
+  font-size: 14px;
   line-height: 24px;
   color: var(--title-color);
 }
@@ -1375,24 +1378,25 @@ header a {
     grid-template-rows: repeat(4, fr);
     align-items: center;
     grid-column-gap: 30px;
+    margin: 50px auto;
   }
   .restaurant__image {
     grid-area: 1/1/span 4/span 1;
-    height: 300px;
+    height: 400px;
   }
   .restaurant h5 {
-    font-size: 0.7em;
+    font-size: 10px;
     grid-column: 2;
     grid-row: 1;
   }
   .restaurant h1 {
     margin-top: -3px;
-    font-size: 2.3em;
+    font-size: 32px;
     grid-column: 2;
     grid-row: 2;
   }
   .restaurant p {
-    font-size: 0.7em;
+    font-size: 10px;
     grid-column: 2;
   }
   .restaurant__button {
@@ -1505,7 +1509,7 @@ header a {
   margin-top: 20px;
   font-family: "Roboto";
   font-weight: 400;
-  font-size: 1em;
+  font-size: 14px;
   line-height: 24px;
   color: var(--title-color);
 }

@@ -4,7 +4,6 @@
         justify-content: flex-end;
         width: 100%;
         & img{
-            // margin-right: -25px;
             width: 100px;
             height: 100px;
         }
@@ -50,16 +49,16 @@
             width: 60%;
             color: var(--primary-color);
             & h1{
-                font-family: 'Old Standard TT';
+                font-family: 'Old Standard TT', sans-serif;
                 font-weight: 400;
-                font-size: 1.5em;
+                font-size: 24px;
                 line-height: 20px;
                 letter-spacing: -0.72px;  
             }
             & p {
-                font-family: 'Roboto';
+                font-family: 'Roboto', sans-serif;
                 font-weight: 400;
-                font-size: 0.8em;
+                font-size: 14px;
                 line-height: 20px;
             }
         }
