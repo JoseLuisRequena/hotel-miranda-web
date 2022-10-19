@@ -52,7 +52,7 @@ function change(page) {
       const texts = item.getElementsByTagName("h1");
       const images = item.getElementsByClassName("rooms-grid__image");
       for (image of images) {
-        let random = Math.floor(Math.random() * (5 - 1) + 1);
+        let random = Math.floor(Math.random() * (9 - 1) + 1);
         image.setAttribute("src", `./img/slide${random}.jpg`);
         if (image.getAttribute("src") === "./img/slide1.jpg") {
           title = "Minimal Duplex Room";
@@ -62,6 +62,14 @@ function change(page) {
           title = "Luxury Suite";
         } else if (image.getAttribute("src") === "./img/slide4.jpg") {
           title = "Single Bed Room";
+        } else if (image.getAttribute("src") === "./img/slide5.jpg") {
+          title = "Double Bed Room";
+        } else if (image.getAttribute("src") === "./img/slide6.jpg") {
+          title = "Luxury Suite";
+        } else if (image.getAttribute("src") === "./img/slide7.jpg") {
+          title = "Single Bed Room";
+        } else if (image.getAttribute("src") === "./img/slide8.jpg") {
+          title = "Minimal Duplex Room";
         }
       }
       for (text of texts) {
