@@ -907,6 +907,14 @@ header a {
   flex-direction: column;
   align-items: center;
 }
+.container__2__fourth__rectangle__img {
+  width: 270px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../img/luxury-room.jpg);
+}
 .container__2__fourth__rectangle__text {
   padding: 38px 35px;
   margin-bottom: 45px;
@@ -937,6 +945,11 @@ header a {
 }
 .container__2__fifth__rectangle__img {
   width: 270px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../img/reception.jpg);
 }
 .container__2__fifth__rectangle__luxury {
   padding: 38px 35px;
