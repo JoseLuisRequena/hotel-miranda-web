@@ -222,12 +222,7 @@ header a {
   border: none;
   transition: 0.3s;
   outline: none;
-}
-.navbar__icons-search:hover {
-  width: 100px;
-  border-radius: 20px;
-  border: 1px solid rgb(0, 0, 0);
-  background: left;
+  cursor: pointer;
 }
 @media only screen and (min-width: 600px) {
   .navbar__menu {
@@ -242,11 +237,6 @@ header a {
     justify-content: space-around;
   }
 }
-@media only screen and (min-width: 800px) {
-  .navbar__icons-search:hover {
-    width: 150px;
-  }
-}
 @media only screen and (min-width: 1000px) {
   .navbar {
     width: 80%;
@@ -255,6 +245,18 @@ header a {
   }
   .navbar__icons img {
     padding: 6px;
+  }
+}
+
+.navbar__icons-search-active {
+  width: 100px;
+  border-radius: 20px;
+  border: 1px solid rgb(0, 0, 0);
+  background: left;
+}
+@media only screen and (min-width: 800px) {
+  .navbar__icons-search-active {
+    width: 150px;
   }
 }
 
