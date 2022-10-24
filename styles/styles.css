@@ -209,8 +209,25 @@ header a {
 .navbar__menu-links {
   display: none;
 }
+.navbar__icons {
+  display: flex;
+  align-items: center;
+}
 .navbar__icons-search {
   margin: 0 20px;
+  padding: 10px;
+  background: #fff url("../img/iconos_svg/search.svg") no-repeat center;
+  height: 35px;
+  width: 35px;
+  border: none;
+  transition: 0.3s;
+  outline: none;
+}
+.navbar__icons-search:hover {
+  width: 100px;
+  border-radius: 20px;
+  border: 1px solid rgb(0, 0, 0);
+  background: left;
 }
 @media only screen and (min-width: 600px) {
   .navbar__menu {
@@ -225,6 +242,11 @@ header a {
     justify-content: space-around;
   }
 }
+@media only screen and (min-width: 800px) {
+  .navbar__icons-search:hover {
+    width: 150px;
+  }
+}
 @media only screen and (min-width: 1000px) {
   .navbar {
     width: 80%;
@@ -232,7 +254,6 @@ header a {
     background-color: #fff;
   }
   .navbar__icons img {
-    border: 2px solid rgba(133, 133, 133, 0.3);
     padding: 6px;
   }
 }

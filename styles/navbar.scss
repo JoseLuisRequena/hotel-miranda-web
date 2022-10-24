@@ -29,9 +29,25 @@
             display: none;
         }
     }
-    &__icons-search{
-        margin: 0 20px;
-           
+    &__icons{
+        display: flex;
+        align-items: center;
+        &-search{
+            margin: 0 20px;
+            padding: 10px;
+            background: #fff url("../img/iconos_svg/search.svg") no-repeat center;
+            height: 35px;
+            width: 35px;
+            border: none;
+            transition: .3s;
+            outline: none;
+        }
+        &-search:hover{
+            width: 100px;
+            border-radius: 20px;
+            border: 1px solid rgb(0, 0, 0);
+            background: left;
+        }
     }
     @media only screen and (min-width: 600px) {
         &__menu {
@@ -46,13 +62,21 @@
             }
         }
     }
+    @media only screen and (min-width: 800px) {
+        &__icons {
+            &-search:hover{
+                width: 150px;
+            }
+        }
+    }
     @media only screen and (min-width: 1000px) {
         width: 80%;
         margin: auto;
         background-color: #fff;
-        &__icons img {
-            border: 2px solid rgba(133, 133, 133, 0.3);
+        &__icons {
+            & img {
             padding: 6px;  
+            }
         }
     }                   
 }
