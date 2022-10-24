@@ -41,12 +41,7 @@
             border: none;
             transition: .3s;
             outline: none;
-        }
-        &-search:hover{
-            width: 100px;
-            border-radius: 20px;
-            border: 1px solid rgb(0, 0, 0);
-            background: left;
+            cursor: pointer;
         }
     }
     @media only screen and (min-width: 600px) {
@@ -62,13 +57,6 @@
             }
         }
     }
-    @media only screen and (min-width: 800px) {
-        &__icons {
-            &-search:hover{
-                width: 150px;
-            }
-        }
-    }
     @media only screen and (min-width: 1000px) {
         width: 80%;
         margin: auto;
@@ -79,4 +67,14 @@
             }
         }
     }                   
+}
+
+.navbar__icons-search-active{
+    width: 100px;
+    border-radius: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    background: left;
+    @media only screen and (min-width: 800px) {
+        width: 150px;
+    }
 }
