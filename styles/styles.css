@@ -120,6 +120,11 @@ header a {
   margin-top: 30px;
 }
 
+.link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .second__rectangle {
   background: #222;
   padding: 36px 20px;
