@@ -1,6 +1,8 @@
-const menuIcon = document.getElementById("menu-icon");
-const menu = document.getElementById("menu-div");
-const textMenu = document.getElementById("menu").innerHTML;
+const menuIcon = document.querySelector("#menu-icon");
+const menu = document.querySelector("#menu-div");
+const textMenu = document.querySelector("#menu").innerHTML;
+const search = document.querySelector(".navbar__icons-search");
+
 menuIcon.addEventListener("click", () => {
   menu.classList.toggle("menu-div-active");
   if (menu.classList.contains("menu-div-active")) {
@@ -10,6 +12,12 @@ menuIcon.addEventListener("click", () => {
     menuIcon.setAttribute("src", "./img/iconos_svg/menu.svg");
     menu.innerHTML = "";
   }
+});
+
+search.addEventListener("click", () => {
+
+  search.classList.toggle("navbar__icons-search-active");
+  
 });
 
 const swiper = new Swiper(".rooms__slider", {
